@@ -133,6 +133,40 @@ This is MongoDb Cheat Sheet if you need some quick reference then it will help y
 
 <br>
 
+-------------------------------------
+
+## Complex Filter Object
+### Any combination of the below can be use inside a filter object to make complex queries
+
+<br>
+
+| $eq | Check for equality |
+| -------- | ------- |
+| ```db.users.find({ name: { $eq: “Alan” } })``` | Get all users with the name Kyle |
+
+<br>
+
+| $ne | Check for not equal |
+| -------- | ------- |
+| ```db.users.find({ name: { $ne: “Turing” } })``` | Get all users with a name other than Turing |
+
+<br>
+
+| $gt / $gte | Check for greater than and greater than or equal to |
+| -------- | ------- |
+| ```db.users.find({ age: { $gt: 12 } })``` | Get all users with an age greater than 12 |
+| ```db.users.find({ age: { $gte: 15 } })``` | Get all users with an age greater than or equal to 15 |
+
+<br>
+
+| $lt / $lte | Check for less than and less than or equal to |
+| -------- | ------- |
+| ```db.users.find({ age: { $lt: 12 } })``` | Get all users with an age less than 12 |
+| ```db.users.find({ age: { $lte: 15 } })``` | Get all users with an age less than or equal to 15 |
+
+<br>
+
+
 
 
 
