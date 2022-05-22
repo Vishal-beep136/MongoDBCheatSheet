@@ -81,23 +81,58 @@ This is MongoDb Cheat Sheet if you need some quick reference then it will help y
 `db.<collectionName>.<command>`
 
 
-| updateOne | Update the first document that matches the filter object with the data passed into the second parameter which is the update object |
+| find | Get all documents |
 | -------- | ------- |
-| ```db.users.updateOne({ age: 14 }, { $set: { age: 241 } })``` | Update the first user with an age of 14 to the age of 241 |
+| ```db.users.find()``` | Get all users |
 
 <br>
 
-| updateMany | Update all documents that matches the filter object with the data passed into the second parameter which is the update object |
+| find(\<filterObject>) | Find all documents that match the filter object |
 | -------- | ------- |
-| ```db.users.updateMany({ age: 241 }, { $inc: { age: 3 } })``` | Update all users with an age of 241 by adding 3 to their age |
+| `db.users.find({ name: “Vishal” })` | Get all users with the name Vishal |
+| `db.users.find({ “address.street”: “321 First Street” })` | Get all users whose adress field has a street field with the value 321 First Street |
 
 <br>
 
-| replaceOne | Replace the first document that matches the filter object with the exact object passed as the second parameter. This will completely overwrite the entire object and not just update individual fields |
+
+| find(\<filterObject> \<selectObject>) | Find all documents that match the filter object but only return the field specified in the select object |
 | -------- | ------- |
-| ```db.users.replaceOne({ age: 12 }, { age: 13 })``` | Replace the first user with an age of 12 with an object that has the age of 13 as its only field |
+| `db.users.find({ name: “Vishal” }, { name: 1, age: 1 })` | Get all users with the name Vishal but only return their name, age, and _id |
+| `db.users.find({}, { age: 0 })` | Get all users and return all columns except for age |
 
 <br>
+
+| findOne | The same as find, but only return the first document that matches the filter object |
+| -------- | ------- |
+| ```db.users.find({ name: “Vishal” })``` | Get the first user with the name Vishal |
+
+<br>
+
+| countDocuments | The same as find, but only return the first document that matches the filter object |
+| -------- | ------- |
+| ```db.users.countDocuments({ name: “Vishal” })``` | Get the number of users with the name Vishal |
+
+<br>
+
+## Delete
+
+#### Each of these commands is run on a specific collection
+
+`db.<collectionName>.<command>`
+
+
+| deleteOne | Delete the first document that matches the filter object |
+| -------- | ------- |
+| ```db.users.deleteOne({ age: 20 })``` | Delete the first user with an age of 20 |
+
+<br>
+
+| deleteMany | Delete all documents that matches the filter object |
+| -------- | ------- |
+| ```db.users.deleteMany({ age: 12 })``` | Delete all users with an age of 12 |
+
+<br>
+
 
 
 
