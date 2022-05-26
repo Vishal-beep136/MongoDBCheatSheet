@@ -1,8 +1,6 @@
-MongoDBCheatSheet
-
+<h1>MongoDB Cheat Sheet</h1>
 This is MongoDb Cheat Sheet if you need some quick reference then it will help you
 
-<h1>MongoDB Cheat Sheet</h1>
 
 ## Terminology
 
