@@ -93,7 +93,7 @@ This is MongoDb Cheat Sheet if you need some quick reference then it will help y
 <br>
 
 
-| find(\<filterObject> \<selectObject>) | Find all documents that match the filter object but only return the field specified in the select object |
+| find(\<filterObject> , \<selectObject>) | Find all documents that match the filter object but only return the field specified in the select object |
 | -------- | ------- |
 | `db.users.find({ name: “Vishal” }, { name: 1, age: 1 })` | Get all users with the name Vishal but only return their name, age, and _id |
 | `db.users.find({}, { age: 0 })` | Get all users and return all columns except for age |
@@ -102,11 +102,11 @@ This is MongoDb Cheat Sheet if you need some quick reference then it will help y
 
 | findOne | The same as find, but only return the first document that matches the filter object |
 | -------- | ------- |
-| ```db.users.find({ name: “Vishal” })``` | Get the first user with the name Vishal |
+| ```db.users.findOne({ name: “Vishal” })``` | Get the first user with the name Vishal |
 
 <br>
 
-| countDocuments | The same as find, but only return the first document that matches the filter object |
+| countDocuments | Return the count of how many documents have this `<filterObject>` |
 | -------- | ------- |
 | ```db.users.countDocuments({ name: “Vishal” })``` | Get the number of users with the name Vishal |
 
