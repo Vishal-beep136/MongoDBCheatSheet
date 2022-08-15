@@ -165,5 +165,5 @@ This is MongoDb Cheat Sheet if you need some quick reference then it will help y
 <br>
 
 
-## Feel free to Contribute
+## Feel free to Contribute :)
 
